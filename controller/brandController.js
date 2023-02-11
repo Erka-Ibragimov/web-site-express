@@ -1,7 +1,15 @@
+const { Brand } = require("../models/model.js");
+const ErrorHandler = require("../error/errorHandler.js");
 class BrandController {
-    async create(req, res) {}
+  async create(req, res) {
+    const { name } = req.body;
+    const brand = await Brand.create({ name });
+    return res.send(brand);
+  }
 
-    async getAll(req, res) {}
-
+  async getAll(req, res) {
+    const brands = await Brand.findAll();
+    return res.send(brands);
+  }
 }
 module.exports = new BrandController();

@@ -8,7 +8,7 @@ const models = require("./models/model.js");
 const fileUpLoad = require("express-fileupload");
 const app = express();
 const router = require("./routes/index.js");
-const { checkError } = require("./error/errors.js");
+const { checkError } = require("./middleware/errors");
 const path = require("path");
 
 app.use(cors());
